@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   is_valid_input.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hemelia <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lflorrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/02 10:42:14 by hemelia           #+#    #+#             */
-/*   Updated: 2020/02/02 11:55:06 by hemelia          ###   ########.fr       */
+/*   Created: 2020/02/08 15:39:45 by lflorrie          #+#    #+#             */
+/*   Updated: 2020/02/09 19:03:48 by lflorrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+int		ft_strlen(char *str);
 
-int		ft_putchar(char c)
+int		is_valid_input(int argc, char **argv)
 {
-	write(1, &c, 1);
+	int i;
+
+	i = 1;
+	if (argc == 10)
+	{
+		while (i < argc)
+		{
+			if (ft_strlen(argv[i]) != 9)
+			{
+				return (0);
+			}
+			++i;
+		}
+		return (1);
+	}
 	return (0);
 }
